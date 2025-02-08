@@ -11,6 +11,7 @@ VIDEO_EXTENSIONS = ['.mp4', '.mkv', '.avi', '.mov']
 def process_media(file_path):
     try:
         file_extension = os.path.splitext(file_path)[1].lower()
+       
         if file_extension in AUDIO_EXTENSIONS:
             print(f"Processing audio file: {file_path}")
             result = model.transcribe(file_path)
@@ -49,5 +50,5 @@ def process_folder(folder_path):
             process_media(file_path)
 
 if __name__ == "__main__":
-    folder_to_process = "/workspaces/PythonProjectVideo/Content" 
+    folder_to_process = "/workspaces/PythonProjectVideos/Content" 
     process_folder(folder_to_process)
